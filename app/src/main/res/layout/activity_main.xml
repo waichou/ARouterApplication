@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="arouter.test.com.arouterapplication.MainActivity">
+    tools:context="arouter.test.com.arouterapplication.activity.MainActivity">
 
 
     <Button
@@ -27,5 +27,19 @@
         android:layout_height="wrap_content"
         android:onClick="jump2LoginActivityClick"
         android:text="jump 2 login activity"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="jump2FountNotActivityClick"
+        android:text="found not activity"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="intercepterClick"
+        android:text="不经过拦截器"
         />
 </LinearLayout>

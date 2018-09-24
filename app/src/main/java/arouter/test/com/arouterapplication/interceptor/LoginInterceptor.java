@@ -21,6 +21,7 @@ public class LoginInterceptor implements IInterceptor {
      */
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
+        System.out.print("拦截器 拦截中...");
         // 是否需要登录
         if (1 == postcard.getExtra()) {
             // 是否已经登录
@@ -43,5 +44,6 @@ public class LoginInterceptor implements IInterceptor {
      */
     @Override
     public void init(Context context) {
+        System.out.print("拦截器init...");
     }
 }

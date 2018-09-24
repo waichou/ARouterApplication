@@ -1,4 +1,4 @@
-package arouter.test.com.arouterapplication;
+package arouter.test.com.arouterapplication.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import arouter.test.com.arouterapplication.R;
 import arouter.test.com.arouterapplication.bean.User;
 
 @Route(path = "/user/main",extras = 1)

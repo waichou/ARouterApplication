@@ -1,4 +1,4 @@
-package arouter.test.com.arouterapplication;
+package arouter.test.com.arouterapplication.app;
 
 import android.app.Application;
 
