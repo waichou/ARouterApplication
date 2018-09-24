@@ -10,6 +10,12 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 import arouter.test.com.arouterapplication.bean.User;
 
+/**
+ * 注意：
+ * 1.在接收实体类时：注意要序列化，实现Parcelable接口
+ * 2.接收方可以通过注解：Autowired 来对应发送方传递的数据key来获取数据
+ * 3.接收后方需要在onCreate方法中定义：ARouter.getInstance().inject(this); 不定义接收不到数据
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -51,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onInterrupt(Postcard postcard) {
                 System.out.println("ARouter onInterrupt 跳转被中断");
+                /**  下面的异常信息是在拦截器中拦截返回的信息 **/
                 String errorInfo = (String)postcard.getTag();
                 System.out.println("error info is "+ errorInfo);
             }
-
         });
     }
 }

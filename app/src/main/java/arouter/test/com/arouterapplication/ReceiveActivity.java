@@ -10,7 +10,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import arouter.test.com.arouterapplication.bean.User;
 
 @Route(path = "/user/main",extras = 1)
-public class Main2Activity extends AppCompatActivity {
+public class ReceiveActivity extends AppCompatActivity {
 
     @Autowired
     String name;

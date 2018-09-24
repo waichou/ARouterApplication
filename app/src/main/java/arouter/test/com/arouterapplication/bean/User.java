@@ -11,7 +11,7 @@ import android.os.Parcelable;
  */
 public class User implements Parcelable {
 
-    public String name;
+    private String name;
 
 
     @Override
@@ -28,8 +28,8 @@ public class User implements Parcelable {
         this.name = name;
     }
 
-    public User() {
-    }
+//    public User() {
+//    }
 
     protected User(Parcel in) {
         this.name = in.readString();
