@@ -7,13 +7,14 @@ import com.alibaba.android.arouter.facade.annotation.Interceptor;
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.template.IInterceptor;
 import com.alibaba.android.arouter.launcher.ARouter;
+
 import arouter.test.com.arouterapplication.Utils;
 
 /**
  * 单独降级策略
  */
-@Interceptor(priority = 1)
-public class LoginInterceptor implements IInterceptor {
+@Interceptor(priority = 2)
+public class PayInterceptor implements IInterceptor {
     /**
      * The operation of this tollgate.
      *
@@ -24,10 +25,9 @@ public class LoginInterceptor implements IInterceptor {
      */
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
-        System.out.println("Login拦截器拦截中...");
-
+        System.out.println("Pay拦截器拦截中...");
         // 是否需要登录
-        if (1 == postcard.getExtra()) {
+        if (3 == postcard.getExtra()) {
             // 是否已经登录
             if (Utils.isLogin) {
                 callback.onContinue(postcard);

@@ -11,9 +11,9 @@ import com.alibaba.android.arouter.launcher.ARouter;
  * @author zhouwei
  * @date 2018/9/24
  * @time 22:02
- * @desc
+ * @desc 全局降级策略
  */
-@Route(path = "/user/*")
+//@Route(path = "/user/*")
 public class LoginDegradeServiceImpl implements DegradeService {
     Context mContext;
 

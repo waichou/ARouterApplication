@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="arouter.test.com.arouterapplication.activity.MainActivity">
+    tools:context="arouter.test.com.arouterapplication.MainActivity">
 
 
     <Button
@@ -41,5 +41,19 @@
         android:layout_height="wrap_content"
         android:onClick="intercepterClick"
         android:text="不经过拦截器"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="jump2MoudleActivity"
+        android:text="跳转到MoudleActivity"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="jump2PayActivity"
+        android:text="跳转到PayActivity"
         />
 </LinearLayout>
