@@ -1,5 +1,7 @@
 package arouter.test.com.arouterapplication;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -174,11 +176,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jump2MoudleActivity(View view) {
-        ARouter.getInstance().build("/route2/activity").greenChannel().navigation();
+        ARouter.getInstance().build("/route2/activity")/*.greenChannel()*/.navigation(this, new NavigationCallback() {
+            @Override
+            public void onFound(Postcard postcard) {
+                System.out.println("ARouter onFound 找到跳转匹配路径");
+            }
+
+            @Override
+            public void onLost(Postcard postcard) {
+                System.out.println("ARouter onLost 没有匹配到跳转路径");//<<<<-------------------
+            }
+
+            @Override
+            public void onArrival(Postcard postcard) {
+                System.out.println("ARouter onArrival 成功跳转");
+            }
+
+            @Override
+            public void onInterrupt(Postcard postcard) {
+                System.out.println("ARouter onInterrupt 跳转被中断");
+                /**  下面的异常信息是在拦截器中拦截返回的信息 **/
+                String errorInfo = (String)postcard.getTag();
+                System.out.println("error info is "+ errorInfo);
+            }
+        });
     }
 
     //跳转到Pay界面
     public void jump2PayActivity(View view) {
         ARouter.getInstance().build("/pay/cast").navigation();
     }
+
 }
